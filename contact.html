@@ -34,23 +34,24 @@
   <main class="container mt-3">
   <!-- content... -->
   <h1>Contact Me</h1>
-  <form>
+  <form class="custom-validation" novalidate> <!-- 1 -->
     <div class="form-row">
       <div class="form-group col-md">
         <label for="email">Your email</label>
-        <input type="email" class="form-control form-control-lg" id="email" placeholder="test@example.com" aria-describedby="email-help">
+        <input type="email" class="form-control form-control-lg" id="email" placeholder="test@example.com" aria-describedby="email-help" required> <!-- 2 -->
         <small id="email-help" class="form-text text-muted">Your email won't be shared with anyone!</small>
       </div>
+      
       <div class="form-group col-md">
-        <label for="email">Your name</label>
-        <input type="name" class="form-control form-control-lg" id="name" placeholder="John Doe">
+        <label for="name">Your name</label>
+        <input type="name" class="form-control form-control-lg" id="name" placeholder="John Doe" required minlength="2"> <!-- 3 -->
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group col">
         <label for="message">Your message</label>
-        <textarea class="form-control form-control-lg" id="message" rows="3"></textarea>
+        <textarea class="form-control form-control-lg" id="message" rows="3" required minlength="2"></textarea> <!-- 4 -->
       </div>
     </div>
     
@@ -63,13 +64,15 @@
           </label>
         </div>
       </div>
-    </div>   
+    </div>
+    
     <div class="form-row">
       <div class="form-group col">
         <input type="submit" value="Send!" class="btn btn-primary btn-lg">
       </div>
     </div>
-  </form>
+  </form>    
+    
   </main>
   <footer class="footer">
   <div class="container">
