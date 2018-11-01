@@ -8,42 +8,42 @@
   <!-- other styles -->
 </head>
 <body>
-  <nav class="navbar navbar-dark bg-dark navbar-expand-md" role="navigation">
-    <div class="container">
-      <a class="navbar-brand" href="/">Personal Site</a>
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#globalNav" aria-controls="globalNav" aria-expanded="false" aria-label="Interruptor de navegação">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="globalNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/portfolio">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/blog">Blog</a>
-          </li>
-        </ul>
-      </div>
+<nav class="navbar navbar-dark bg-dark navbar-expand-md" role="navigation">
+  <div class="container">
+    <a class="navbar-brand" href="/">Personal Site</a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#globalNav" aria-controls="globalNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="globalNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/portfolio">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">Blog</a>
+        </li>
+      </ul>
     </div>
-  </nav>
-  <main class="container mt-3">
-  <!-- content... -->
+  </div>
+</nav>
+
+<main class="container mt-3">
   <h1>Contact Me</h1>
- 
-    <form class="custom-validation" novalidate>
+
+  <form class="custom-validation was-validated" novalidate="">
     <div class="form-row">
       <div class="form-group col-md">
         <label for="email">Your email</label>
-        <input type="email" class="form-control form-control-lg" id="email" placeholder="test@example.com" aria-describedby="email-help" required>
-        <div class="valid-feedback"> <!-- 1 -->
+        <input type="email" class="form-control form-control-lg" id="email" placeholder="test@example.com" aria-describedby="email-help" required="">
+        <div class="valid-feedback">
           Looking nice!
         </div>
-        <div class="invalid-feedback"> <!-- 2 -->
+        <div class="invalid-feedback">
           Please, enter a valid email!
         </div>
         <small id="email-help" class="form-text text-muted">Your email won't be shared with anyone!</small>
@@ -51,8 +51,8 @@
       
       <div class="form-group col-md">
         <label for="email">Your name</label>
-        <input type="name" class="form-control form-control-lg" id="name" placeholder="John Doe" required minlength="2">
-        <div class="invalid-feedback"> <!-- 3 -->
+        <input type="name" class="form-control form-control-lg" id="name" placeholder="John Doe" required="" minlength="2">
+        <div class="invalid-feedback">
           Name is required (must be at least 2 characters long)!
         </div>
       </div>
@@ -61,8 +61,8 @@
     <div class="form-row">
       <div class="form-group col">
         <label for="message">Your message</label>
-        <textarea class="form-control form-control-lg" id="message" rows="3" required minlength="2"></textarea>
-        <div class="invalid-feedback"> <!-- 4 -->
+        <textarea class="form-control form-control-lg" id="message" rows="3" required="" minlength="2"></textarea>
+        <div class="invalid-feedback">
           Message is required (must be at least 2 characters long)!
         </div>
       </div>
@@ -85,26 +85,25 @@
       </div>
     </div>
   </form>
-    
+</main>
 
-    
-  </main>
-  <footer class="footer">
+<footer class="footer">
   <div class="container">
-    <span class="text-muted">&copy; 2018 My Personal Site LLC.</span>
+    <span class="text-muted">© 2018 My Personal Site LLC.</span>
   </div>
 </footer>
-
-<!-- javascript que inibe a submissão do form caso a client-validation não passe -->
-  <script>
-  (function() {
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script>// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
   'use strict';
-  window.addEventListener('load', function() {
+  window.addEventListener('load', function () {
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('custom-validation');
     // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
+    var validation = Array.prototype.filter.call(forms, function (form) {
+      form.addEventListener('submit', function (event) {
         if (form.checkValidity() === false) {
           event.preventDefault();
           event.stopPropagation();
@@ -115,10 +114,5 @@
   }, false);
 })();
 </script>
-<!-- fim da validação -->
-  
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
